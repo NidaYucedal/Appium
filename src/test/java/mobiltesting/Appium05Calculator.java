@@ -1,14 +1,18 @@
 package mobiltesting;
 
 import io.appium.java_client.MobileElement;
+import io.appium.java_client.TouchAction;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.remote.MobileCapabilityType;
+import io.appium.java_client.touch.WaitOptions;
+import io.appium.java_client.touch.offset.PointOption;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.time.Duration;
 import java.util.concurrent.TimeUnit;
 
 public class Appium05Calculator {
@@ -25,6 +29,10 @@ public class Appium05Calculator {
 
         AndroidDriver<MobileElement> driver = new AndroidDriver<MobileElement>(new URL("http://127.0.0.1:4723/wd/hub"), capabilities);
 
+        TouchAction touchAction = new TouchAction(driver);
+        touchAction.press(PointOption.point(734, 1006)).
+                waitAction(new WaitOptions().withDuration(Duration.ofMillis(600))).
+                moveTo(PointOption.point(734, 1006)).release().perform();
 
         driver.findElementByXPath("//android.widget.TextView[@content-desc=\"Calculator\"]").click();
         driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);

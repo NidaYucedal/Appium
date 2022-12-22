@@ -43,8 +43,8 @@ public class Appium04 {
 
 
         TouchAction touchAction = new TouchAction(driver);
-        touchAction.press(PointOption.point(734, 1349)).
+        touchAction.press(PointOption.point(734, 1006)).
                 waitAction(new WaitOptions().withDuration(Duration.ofMillis(600))).
-                moveTo(PointOption.point(734, 940)).release().perform();
+                moveTo(PointOption.point(734, 1006)).release().perform();
     }
 }
