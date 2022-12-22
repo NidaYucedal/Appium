@@ -28,6 +28,10 @@ public class Appium06Amazon {
 
         AndroidDriver<MobileElement> driver = new AndroidDriver<MobileElement>(new URL("http://127.0.0.1:4723/wd/hub"), capabilities);
 
+
+
+
+
     }
 
 }
