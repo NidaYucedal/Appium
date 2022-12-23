@@ -76,7 +76,5 @@ public class Appium06Amazon {
         //driver.findElementByAndroidUIAutomator("UiSelector().className(\"android.widget.Button\").textStartsWith(\"add\")").click();
 
 
-
-
     }
 }
