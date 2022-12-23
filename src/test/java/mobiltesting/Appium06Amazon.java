@@ -72,5 +72,8 @@ public class Appium06Amazon {
         Thread.sleep(3);
         //close session
         driver.closeApp();
+
+        //driver.findElementByAndroidUIAutomator("UiSelector().className(\"android.widget.Button\").textStartsWith(\"add\")").click();
+
     }
 }
