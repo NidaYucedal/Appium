@@ -1,11 +1,13 @@
 package mobiltesting;
 
+import io.appium.java_client.MobileElement;
+import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.remote.MobileCapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.annotations.Test;
 
 import java.net.MalformedURLException;
-
+import java.net.URL;
 
 
 public class Appium07 {
@@ -22,6 +24,10 @@ public class Appium07 {
         capabilities.setCapability("appPackage", "com.google.android.apps.nexuslauncher");
         capabilities.setCapability("appActivity", "com.google.android.apps.nexuslauncher.NexusLauncherActivity");
         capabilities.setCapability(MobileCapabilityType.NO_RESET, "true");
+
+        AndroidDriver<MobileElement> driver = new AndroidDriver<MobileElement>(new URL("http://127.0.0.1:4723/wd/hub"), capabilities);
+
+
 
 
     }
