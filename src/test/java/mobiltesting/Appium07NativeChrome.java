@@ -11,7 +11,7 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.Set;
 
-public class AppiumWebAppChrome {
+public class Appium07NativeChrome {
 
     @Test
     public void test() throws MalformedURLException, InterruptedException {
@@ -22,15 +22,9 @@ public class AppiumWebAppChrome {
         capabilities.setCapability(MobileCapabilityType.PLATFORM_VERSION, "10");
         capabilities.setCapability(MobileCapabilityType.DEVICE_NAME, "626c3e64");
         capabilities.setCapability(MobileCapabilityType.AUTOMATION_NAME, "UiAutomator2");
-        capabilities.setCapability(MobileCapabilityType.NEW_COMMAND_TIMEOUT,"6000");
-
-        //chrome driver versionu buradan indirebilirsiniz
-        //https://chromedriver.storage.googleapis.com/index.html
-        //sonrasında driver in absolute path bir alt satirda tanimliyoruz
-        // capabilities.setCapability("chromeDriverExecutable","path");
-
-        capabilities.setCapability(MobileCapabilityType.BROWSER_NAME, "chrome");
-        capabilities.setCapability("chromeDriverExecutable","C:\\Users\\Administrator\\IdeaProjects\\AppiumPractise\\src\\driver\\chromedriver.exe");
+        capabilities.setCapability("appPackage", "com.android.chrome");
+        capabilities.setCapability("appActivity", "com.google.android.apps.chrome.Main");
+        capabilities.setCapability("noReset", "true");
 
 
         AndroidDriver<MobileElement> driver = new AndroidDriver<MobileElement>(new URL("http://127.0.0.1:4723/wd/hub"), capabilities);
@@ -54,12 +48,20 @@ public class AppiumWebAppChrome {
 
         }
 
-        MobileElement logo=driver.findElementByXPath("//span[@id='logo-ext']");
-        Assert.assertTrue(logo.isDisplayed());
-
         System.out.println(driver.getContext() + "<===app degistiginde");
         Thread.sleep(5000);
+        MobileElement homeScreenLogo = driver.findElementByAccessibilityId("Amazon");
+        Assert.assertTrue(homeScreenLogo.isDisplayed());
 
+        //System.out.println(driver.getCurrentUrl());
+        Thread.sleep(3000);
+        MobileElement signInButton = driver.findElementByAccessibilityId("Sign in ›");
+        signInButton.click();
+
+        MobileElement welcomeText = driver.findElementByXPath("//android.widget.TextView[@text='Welcome']");
+        Assert.assertEquals(welcomeText.getText(), "Welcome");
+
+        Thread.sleep(3);
         //close session
         driver.closeApp();
 
