@@ -62,7 +62,7 @@ public void welcome_header_is_visible() {
         }
         return false;
     }
-ve kodda web'de gerekli olan öğeyle daha iyi geçiş yapın:
+ve kodla web'de gerekli olan ögeyle daha iyi gecis yapin:
 
 public void Verify_visibility_of_welcome_header () {
     switchToWebContext();
