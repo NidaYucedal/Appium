@@ -42,6 +42,5 @@ public class Appium07 {
 
 
 
-
     }
 }
