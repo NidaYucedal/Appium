@@ -71,5 +71,17 @@ public class Appium10ApiDemos  {
         System.out.println("Mission Completed");
         //close the session
         driver.closeApp();
+
+
+
+
+
+
+
+
+
+
+
+
     }
 }
