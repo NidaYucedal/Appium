@@ -22,7 +22,7 @@ public class Appium10ApiDemos  {
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability(MobileCapabilityType.PLATFORM_NAME, "Android");
         capabilities.setCapability(MobileCapabilityType.PLATFORM_VERSION, "10");
-        capabilities.setCapability(MobileCapabilityType.DEVICE_NAME, "626c3e64");
+        capabilities.setCapability(MobileCapabilityType.DEVICE_NAME, "1312d4f50606");
         capabilities.setCapability(MobileCapabilityType.AUTOMATION_NAME, "UiAutomator2");
         capabilities.setCapability(MobileCapabilityType.APP, "C:\\Users\\Administrator\\IdeaProjects\\AppiumPractise\\src\\apps\\apiDemos.apk");
         capabilities.setCapability("noReset", "true");
