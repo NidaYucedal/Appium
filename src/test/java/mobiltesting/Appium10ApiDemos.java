@@ -73,6 +73,5 @@ public class Appium10ApiDemos  {
         driver.closeApp();
 
 
-
     }
 }
