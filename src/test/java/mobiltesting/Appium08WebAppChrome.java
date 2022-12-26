@@ -36,7 +36,6 @@ public class Appium08WebAppChrome {
         AndroidDriver<MobileElement> driver = new AndroidDriver<MobileElement>(new URL("http://127.0.0.1:4723/wd/hub"), capabilities);
 
         driver.get("https://www.amazon.com");
-
         //asagidaki kod tel kilitli ise acmamizi sagliyor
         if (driver.isDeviceLocked()) {
             driver.unlockDevice();
