@@ -55,7 +55,6 @@ public class Appium13BrowserCalculator {
         Assert.assertEquals(driver.findElementById("com.google.android.calculator:id/result_preview").getText(),"10");
 
 
-
         // Invoke driver.quit() after the test is done to indicate that the test is completed.
         driver.quit();
 
