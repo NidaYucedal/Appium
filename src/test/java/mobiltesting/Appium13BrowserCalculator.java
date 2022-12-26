@@ -58,5 +58,4 @@ public class Appium13BrowserCalculator {
         driver.quit();
 
     }
-
 }
