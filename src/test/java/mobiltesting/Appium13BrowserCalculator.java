@@ -57,6 +57,13 @@ public class Appium13BrowserCalculator {
         // Invoke driver.quit() after the test is done to indicate that the test is completed.
         driver.quit();
 
+
+
+
+
+
+
+
     }
 
 
