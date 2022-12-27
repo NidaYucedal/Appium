@@ -78,5 +78,20 @@ public class ECommerceNegativeLogin01 extends BaseECommerceApp {
         //String toastMessage = driver.findElement((By.xpath("/hierarchy/android.widget.Toast")).getText();
         //
         //System.out.println(toastMessage);
+
+
+        /*
+        public void verifyToastMessageUsingPageSource(String toastmsg) throws InterruptedException {
+    boolean found = false;
+    for(int i =0 ; i <8; i++){
+      if(getDriver().getPageSource().contains("class=\"android.widget.Toast\" text=\""+toastmsg+"\"")){
+        found = true;
+        break;
+      }
+      Thread.sleep(300);
+    }
+    Assert.assertTrue(found,"toast message "+toastmsg+" is present");
+  }
+         */
     }
 }
