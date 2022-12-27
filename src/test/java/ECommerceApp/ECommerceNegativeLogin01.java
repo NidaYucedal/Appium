@@ -47,12 +47,12 @@ public class ECommerceNegativeLogin01 extends BaseECommerceApp {
         Thread.sleep(4000);
         MobileElement expectedCountry = driver.findElementByXPath("//android.widget.TextView[@text='Angola']");
         expectedCountry.click();
-        Thread.sleep(5000);
+        //Thread.sleep(5000);
         //istedigimiz ulkeyi dogru olarak sectik mi?
         MobileElement selectedCountry = driver.findElementByXPath("//android.widget.TextView[@text='Angola']");
         System.out.println(selectedCountry.getText());
         Assert.assertEquals(selectedCountry.getText(), "Angola");
-        Thread.sleep(3000);
+        //Thread.sleep(3000);
         //negative case icin name bos olmali
         //Assert.assertTrue(nameBox.getText().isEmpty());
         nameBox.clear();
@@ -69,5 +69,14 @@ public class ECommerceNegativeLogin01 extends BaseECommerceApp {
         //close app
         driver.closeApp();
 
+
+
+        //WebDriverWait waitForToast = new WebDriverWait(driver.25);
+        //
+        //waitForToast.until(ExpectedConditions.presenceOfElementLoacted(By.xpath("/hierarchy/android.widget.Toast")));
+        //
+        //String toastMessage = driver.findElement((By.xpath("/hierarchy/android.widget.Toast")).getText();
+        //
+        //System.out.println(toastMessage);
     }
 }
