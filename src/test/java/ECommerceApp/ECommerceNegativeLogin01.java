@@ -60,8 +60,9 @@ public class ECommerceNegativeLogin01 extends BaseECommerceApp {
         femaleRadioButton.click();
         //shop butonuna tiklayalim
         letsShopButton.click();
+        ReusableMethods.wait(5);
         //hata mesajini onayla
-        MobileElement errorPopUpText = driver.findElementByXPath("//android.widget.Toast");
+        MobileElement errorPopUpText = driver.findElementByXPath("//android.widget.Toast[@text='Please enter your name']");
         ////android.widget.Toast[@text='Please enter your name']
         //ReusableMethods.waitToBeVisible(errorPopUpText,5);
         String errorText = errorPopUpText.getText();
