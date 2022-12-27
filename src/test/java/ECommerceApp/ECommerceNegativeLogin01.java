@@ -4,6 +4,7 @@ import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+import utilities.ReusableMethods;
 
 import java.net.MalformedURLException;
 
@@ -60,9 +61,8 @@ public class ECommerceNegativeLogin01 extends BaseECommerceApp {
         //shop butonuna tiklayalim
         letsShopButton.click();
         //hata mesajini onayla
-        Thread.sleep(2000);
         MobileElement errorPopUpText = driver.findElementByXPath("//android.widget.Toast");
-
+        ReusableMethods.waitToBeVisible(errorPopUpText,5);
         String errorText = errorPopUpText.getText();
         Assert.assertEquals(errorText, "Please enter your name");
 
