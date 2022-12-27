@@ -19,7 +19,6 @@ public class ECommerceNegativeLogin01 extends BaseECommerceApp {
     //5-Validate Mobile gestures working for link (long press) and navigate to WebView 
     //6-Verify if user can do operations on Web view and navigate back to native app if needed.
     (go to google and search “appium” then navigate to NATIVE APP and verify it)
-
      */
 
 
