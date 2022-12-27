@@ -62,7 +62,8 @@ public class ECommerceNegativeLogin01 extends BaseECommerceApp {
         letsShopButton.click();
         //hata mesajini onayla
         MobileElement errorPopUpText = driver.findElementByXPath("//android.widget.Toast");
-        ReusableMethods.waitToBeVisible(errorPopUpText,5);
+        ////android.widget.Toast[@text='Please enter your name']
+        //ReusableMethods.waitToBeVisible(errorPopUpText,5);
         String errorText = errorPopUpText.getText();
         Assert.assertEquals(errorText, "Please enter your name");
 
