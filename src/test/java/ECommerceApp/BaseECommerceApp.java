@@ -15,7 +15,7 @@ public class BaseECommerceApp {
 
         capabilities.setCapability(MobileCapabilityType.PLATFORM_NAME, "Android");
         capabilities.setCapability(MobileCapabilityType.PLATFORM_VERSION, "10.0");
-        capabilities.setCapability(MobileCapabilityType.DEVICE_NAME, "RealDevice");
+        capabilities.setCapability(MobileCapabilityType.DEVICE_NAME, "1312d4f50606");
         capabilities.setCapability(MobileCapabilityType.AUTOMATION_NAME, "UiAutomator2");
         //capabilities.setCapability(MobileCapabilityType.AUTO_WEBVIEW,"true");
         capabilities.setCapability("chromedriverExecutable","C:\\Users\\Administrator\\IdeaProjects\\AppiumPractise\\src\\driver\\chromedriver.exe");
