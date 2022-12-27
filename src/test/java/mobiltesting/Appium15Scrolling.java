@@ -28,7 +28,7 @@ public class Appium15Scrolling extends BaseClass {
 
         driver.findElementByAndroidUIAutomator("UiSelector().className(\"android.widget.TextView\").text(\"Switches\")").click();
 
-        // Dimension dimension = driver.manage().window().getSiz
+        // Dimension dimension = driver.manage().window().getSize();
         // int start_x = (int) (dimension.width * 0.5); //baslangıc noktalarını belirttik
         // int start_y = (int) (dimension.height * 0 //parmagi koydugumuz yer
         // int end_x = (int) (dimension.width * 0.5);
