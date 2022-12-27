@@ -18,7 +18,7 @@ public class Appium15Scrolling extends BaseClass {
         //api demos butonuna tikla
         driver.findElementByXPath("//android.widget.TextView[@text='API Demos']").click();
         Thread.sleep(3000);
-//preference butonuna tikladik
+        //preference butonuna tikladik
         driver.findElementByXPath("//android.widget.TextView[@text='Views']").click();
         //preference dependencies butonuna bastik
         Thread.sleep(5000);
