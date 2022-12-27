@@ -34,6 +34,7 @@ public class Appium15Scrolling extends BaseClass {
         // int end_x = (int) (dimension.width * 0.5);
         // int end_y = (int) (dimension.height * 0
         // TouchAction touchAction = new TouchAction(driver);
+
         // for (int i = 0; i < 3; i++) {
         //     Thread.sleep(3000);
         //     touchAction.press(PointOption.point(start_x,start_y))
