@@ -30,7 +30,7 @@ public class Appium15Scrolling extends BaseClass {
 
         // Dimension dimension = driver.manage().window().getSiz
         // int start_x = (int) (dimension.width * 0.5); //baslangıc noktalarını belirttik
-        // int start_y = (int) (dimension.height * 0
+        // int start_y = (int) (dimension.height * 0 //parmagi koydugumuz yer
         // int end_x = (int) (dimension.width * 0.5);
         // int end_y = (int) (dimension.height * 0
         // TouchAction touchAction = new TouchAction(driv
