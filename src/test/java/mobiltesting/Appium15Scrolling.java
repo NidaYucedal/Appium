@@ -40,6 +40,5 @@ public class Appium15Scrolling extends BaseClass {
         //             .moveTo(PointOption.point(end_x,end_y)).release().perform();
         // }
 
-
     }
 }
