@@ -21,7 +21,6 @@ public class ECommerceNegativeLogin01 extends BaseECommerceApp {
     (go to google and search “appium” then navigate to NATIVE APP and verify it)
 
 
-
      */
 
 
