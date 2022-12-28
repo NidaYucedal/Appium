@@ -2,8 +2,12 @@ package ECommerceApp;
 
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+import utilities.Driver;
 import utilities.ReusableMethods;
 
 import java.net.MalformedURLException;
@@ -62,15 +66,33 @@ public class ECommerceNegativeLogin01 extends BaseECommerceApp {
         letsShopButton.click();
         ReusableMethods.wait(5);
         //hata mesajini onayla
-        MobileElement errorPopUpText = driver.findElementByXPath("//android.widget.Toast[@text='Please enter your name']");
+
+        WebElement errorPopUpText = driver.findElementByXPath("//android.widget.Toast");
+
+        boolean found = false;
+        for (int i = 0; i < 8; i++) {
+            if (Driver.getAppiumDriver().getPageSource().contains("class=\"android.widget.Toast\" text=\"" + errorPopUpText + "\"")) {
+                found = true;
+                break;
+            }
+            Thread.sleep(300);
+        }
+        Assert.assertTrue(found, "toast message " + errorPopUpText + " is present");
+
+        //waitForToast.until(ExpectedConditions.presenceOfElementLoacted(By.xpath("/hierarchy/android.widget.Toast")));
+        //
+        //String toastMessage = driver.findElement((By.xpath("/hierarchy/android.widget.Toast")).getText();
+        //
+        //System.out.println(toastMessage);
+        //MobileElement errorPopUpText = driver.findElementByXPath("//android.widget.Toast[normalize-space()='Please enter your name']");
+        //android.widget.Toast[normalize-space='Please enter your name']
         ////android.widget.Toast[@text='Please enter your name']
         //ReusableMethods.waitToBeVisible(errorPopUpText,5);
-        String errorText = errorPopUpText.getText();
-        Assert.assertEquals(errorText, "Please enter your name");
+        //String errorText = errorPopUpText.getText();
+        //Assert.assertEquals(errorText, "Please enter your name");
 
         //close app
         driver.closeApp();
-
 
 
         //WebDriverWait waitForToast = new WebDriverWait(driver.25);
