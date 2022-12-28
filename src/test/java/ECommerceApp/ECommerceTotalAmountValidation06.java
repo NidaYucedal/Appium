@@ -156,7 +156,5 @@ public class ECommerceTotalAmountValidation06 extends BaseECommerceApp {
         //close app
         driver.closeApp();
 
-
-
     }
 }
