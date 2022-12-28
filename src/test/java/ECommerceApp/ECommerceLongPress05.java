@@ -114,12 +114,5 @@ public class ECommerceLongPress05 extends BaseECommerceApp {
         //close app
         driver.closeApp();
 
-
-
-
-
-
-
-
     }
 }
