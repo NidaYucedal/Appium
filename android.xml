@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="tests" verbose="2" parallel="methods" thread-count="2" preserve-order="true">
+    <test name="C:\Users\Administrator\IdeaProjects\AppiumPractise\src\test\java\parallel\parallelAndroidTest01.java">
+        <classes>
+            <class name="parallel.parallelAndroidTest01">
+                <methods>
+                    <include name="test"/>
+                    <include name="test2"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
+
+
+
