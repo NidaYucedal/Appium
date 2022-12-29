@@ -3,11 +3,10 @@ package tests;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.TouchAction;
 import io.appium.java_client.android.AndroidDriver;
+
 import java.net.MalformedURLException;
-import java.net.URL;
-import java.util.concurrent.TimeUnit;
-import io.appium.java_client.remote.MobileCapabilityType;
-import org.openqa.selenium.remote.DesiredCapabilities;
+
+import org.testng.Assert;
 import org.testng.annotations.Test;
 import utilities.ReusableMethods;
 
@@ -15,15 +14,11 @@ public class HepsiBuradaApp extends HepsiBase {
 
     @Test
     public void test() throws MalformedURLException, InterruptedException {
-        AndroidDriver<MobileElement> driver = getAndroidDriver();
+        AndroidDriver<MobileElement> driver = getAndroidDriver2();
         Thread.sleep(9000);
-        //driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-        ReusableMethods.wait(5);
-        MobileElement search=driver.findElementById("com.pozitron.hepsiburada:id/etSearchBox");
-        ReusableMethods.waitToBeClickable(search,5);
+        MobileElement search = driver.findElementById("com.pozitron.hepsiburada:id/etSearchBox");
         search.click();
         driver.findElementById("com.pozitron.hepsiburada:id/etSearchBox").sendKeys("nutella");
-
 
 
         //[48,199][592,242]
@@ -37,12 +32,48 @@ public class HepsiBuradaApp extends HepsiBase {
         //driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.FrameLayout/android.view.ViewGroup/android.widget.LinearLayout/android.widget.LinearLayout[2]/androidx.recyclerview.widget.RecyclerView/android.view.ViewGroup[1]/android.widget.TextView[1]").click();
 
 
-        ReusableMethods.wait(5);
+        ReusableMethods.wait(3);
         driver.findElementByXPath("//*[@class='suggestion-telPRb5gY5JtrMjuj62z' and text()='nutella']").click();
+
+
+        driver.findElementByXPath("(//android.widget.Button[@content-desc=\"Sepete Ekle\"])[1]").click();
+        ReusableMethods.wait(5);
+
+        MobileElement toast = driver.findElementByXPath("//android.widget.Toast");
+        ReusableMethods.wait(2);
+        Assert.assertTrue(toast.isDisplayed());
+
+
+        driver.findElementByXPath("//android.widget.FrameLayout[@content-desc=\"Sepetim, 1 yeni bildirim\"]/android.widget.FrameLayout/android.widget.ImageView").click();
         ReusableMethods.wait(2);
 
-        // driver.findElementByXPath("//android.widget.ImageView[@content-desc=\"Dudak\"]");
+        MobileElement basket = driver.findElementById("com.pozitron.hepsiburada:id/cartWebView");
+        Assert.assertTrue(basket.isDisplayed());
+        ReusableMethods.wait(3);
+
+
+        //List<MobileElement> els1 = (MobileElement) driver.findElementsByXPath("//android.widget.Button[@content-desc=\"Sepete Ekle\"]");
+        driver.findElementByXPath("//android.widget.Button[@text='Alışverişi tamamla']").click();
         ReusableMethods.wait(5);
+
+        driver.closeApp();
+
+        MobileElement login = driver.findElementByXPath("//btnLogin[@text='Giriş yap']");
+        Assert.assertTrue(login.isDisplayed());
+
+
+
+        /*
+         // Find the element to delete
+    WebElement element = driver.findElement(By.cssSelector("#element-id"));
+
+    // Check if the element is displayed
+    if (element.isDisplayed()) {
+      // If it is, click the delete button
+      driver.findElement(By.cssSelector("#delete-button")).click();
+    }
+
+         */
 
     }
 }

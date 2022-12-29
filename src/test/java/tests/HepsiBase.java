@@ -14,7 +14,7 @@ import java.util.concurrent.TimeUnit;
 public class HepsiBase {
 
     @Test
-    public static AndroidDriver getAndroidDriver() throws MalformedURLException {
+    public static AndroidDriver getAndroidDriver2() throws MalformedURLException {
         DesiredCapabilities capabilities = new DesiredCapabilities();
 
         capabilities.setCapability("platformName", "Android");

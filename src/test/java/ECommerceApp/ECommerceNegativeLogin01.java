@@ -36,28 +36,26 @@ public class ECommerceNegativeLogin01 extends BaseECommerceApp {
         //1- Fill the form details and verify Toast error messages displayed appropriately for wrong inputs
         //1- hatali data ile form doldurdugunuzda hata mesajini dogrulayin
 
-        MobileElement homeScreenTitle = driver.findElementById("toolbar_title");
+        Thread.sleep(5000);
         MobileElement countrySpinner = driver.findElementById("spinnerCountry");
 
 
         MobileElement nameBox = driver.findElementById("com.androidsample.generalstore:id/nameField");
-        MobileElement maleRadioButton = driver.findElementById("com.androidsample.generalstore:id/radioMale");
         MobileElement femaleRadioButton = driver.findElementById("com.androidsample.generalstore:id/radioFemale");
         MobileElement letsShopButton = driver.findElementById("com.androidsample.generalstore:id/btnLetsShop");
 
-        //ana sayfa da miyiz? onayladik
 
         //ulkeyi secmek icin ulke butununa bastik
-        countrySpinner.click();
+        //countrySpinner.click();
         //ulkeyi sececegiz
         Thread.sleep(4000);
-        MobileElement expectedCountry = driver.findElementByXPath("//android.widget.TextView[@text='Angola']");
-        expectedCountry.click();
+       // MobileElement expectedCountry = driver.findElementByXPath("//android.widget.TextView[@text='Angola']");
+       // expectedCountry.click();
         //Thread.sleep(5000);
         //istedigimiz ulkeyi dogru olarak sectik mi?
-        MobileElement selectedCountry = driver.findElementByXPath("//android.widget.TextView[@text='Angola']");
-        System.out.println(selectedCountry.getText());
-        Assert.assertEquals(selectedCountry.getText(), "Angola");
+       // MobileElement selectedCountry = driver.findElementByXPath("//android.widget.TextView[@text='Angola']");
+       // System.out.println(selectedCountry.getText());
+       // Assert.assertEquals(selectedCountry.getText(), "Angola");
         //Thread.sleep(3000);
         //negative case icin name bos olmali
         //Assert.assertTrue(nameBox.getText().isEmpty());
@@ -70,6 +68,10 @@ public class ECommerceNegativeLogin01 extends BaseECommerceApp {
         //hata mesajini onayla
 
 
+        Thread.sleep(2000);
+        MobileElement errorPopUpText = driver.findElementByXPath("//android.widget.Toast");
+        String errorText = errorPopUpText.getText();
+        Assert.assertEquals(errorText, "Please enter your name");
       //  boolean found = false;
       //  for (int i = 0; i < 8; i++) {
       //      if (Driver.getAppiumDriver().getPageSource().contains("class=\"android.widget.Toast\" text=\"" + errorPopUpText + "\"")) {
@@ -93,7 +95,7 @@ public class ECommerceNegativeLogin01 extends BaseECommerceApp {
         //Assert.assertEquals(errorText, "Please enter your name");
 
         //close app
-        driver.closeApp();
+        //driver.closeApp();
 
 
         //WebDriverWait waitForToast = new WebDriverWait(driver.25);

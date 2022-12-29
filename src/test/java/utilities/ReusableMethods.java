@@ -5,6 +5,7 @@ import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.annotations.Test;
 
 import java.util.List;
 
@@ -123,4 +124,30 @@ public class ReusableMethods {
 //attribute check
 
 
+  //  @Test
+  //  public void testScroll()throws Exception
+  //  {
+  //      for(int i=0;i<4;i++)
+  //      {
+  //          Thread.sleep(2000);
+  //          if (driver.findElement(By.name("end_item")).isDisplayed())
+  //          {
+  //              driver.findElement(By.name("end_item")).click();
+  //              break;
+  //          }
+  //          else
+  //          {
+  //              horizontalScroll();
+  //          }
+//
+  //      }
+  //  }
+  //  public void verticalScroll()
+  //  {
+  //      size=driver.manage().window().getSize();
+  //      int y_start=(int)(size.height*0.60);
+  //      int y_end=(int)(size.height*0.30);
+  //      int x=size.width/2;
+  //      driver.swipe(x,y_start,x,y_end,4000);
+  //  }
 }
