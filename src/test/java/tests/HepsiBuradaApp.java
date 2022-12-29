@@ -63,6 +63,12 @@ public class HepsiBuradaApp extends HepsiBase {
 
 
 
+
+
+
+
+
+
         /*
          // Find the element to delete
     WebElement element = driver.findElement(By.cssSelector("#element-id"));
