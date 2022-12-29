@@ -62,7 +62,6 @@ public class HepsiBuradaApp extends HepsiBase {
         Assert.assertTrue(login.isDisplayed());
 
 
-
         /*
          // Find the element to delete
     WebElement element = driver.findElement(By.cssSelector("#element-id"));
