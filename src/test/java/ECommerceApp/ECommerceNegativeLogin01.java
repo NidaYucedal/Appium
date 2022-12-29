@@ -2,8 +2,10 @@ package ECommerceApp;
 
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -67,17 +69,16 @@ public class ECommerceNegativeLogin01 extends BaseECommerceApp {
         ReusableMethods.wait(5);
         //hata mesajini onayla
 
-        WebElement errorPopUpText = driver.findElementByXPath("//android.widget.Toast");
 
-        boolean found = false;
-        for (int i = 0; i < 8; i++) {
-            if (Driver.getAppiumDriver().getPageSource().contains("class=\"android.widget.Toast\" text=\"" + errorPopUpText + "\"")) {
-                found = true;
-                break;
-            }
-            Thread.sleep(300);
-        }
-        Assert.assertTrue(found, "toast message " + errorPopUpText + " is present");
+      //  boolean found = false;
+      //  for (int i = 0; i < 8; i++) {
+      //      if (Driver.getAppiumDriver().getPageSource().contains("class=\"android.widget.Toast\" text=\"" + errorPopUpText + "\"")) {
+      //          found = true;
+      //          break;
+      //      }
+      //      Thread.sleep(300);
+      //  }
+      //  Assert.assertTrue(found, "toast message " + errorPopUpText + " is present");
 
         //waitForToast.until(ExpectedConditions.presenceOfElementLoacted(By.xpath("/hierarchy/android.widget.Toast")));
         //
@@ -116,6 +117,10 @@ public class ECommerceNegativeLogin01 extends BaseECommerceApp {
     }
     Assert.assertTrue(found,"toast message "+toastmsg+" is present");
   }
+
+
+  WebElement toastView = androidDriver.findElement(By.xpath("/hierarchy/android.widget.Toast[1]"));
+ String text = toastView.getAttribute("name");
          */
     }
 }
