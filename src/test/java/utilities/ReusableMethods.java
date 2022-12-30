@@ -1,20 +1,18 @@
 package utilities;
 
 
-import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.TouchAction;
 import io.appium.java_client.android.AndroidDriver;
+import io.appium.java_client.touch.WaitOptions;
 import io.appium.java_client.touch.offset.PointOption;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Dimension;
-import org.openqa.selenium.Point;
+
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.annotations.Test;
 
-import java.awt.*;
-import java.net.MalformedURLException;
+import java.time.Duration;
 import java.util.Arrays;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -186,6 +184,27 @@ public class ReusableMethods {
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//android.widget.Toast[1]")));
         String toastMessage = getAppiumDriver().findElement(By.xpath("//android.widget.Toast[1]")).getText();
     }
+
+    public static void scrollUp() {
+        Dimension dimension= Driver.getAppiumDriver().manage().window().getSize();
+
+        int start_x= (int) (dimension.width*0.5);
+        int start_y= (int) (dimension.height*0.8);
+
+        int end_x= (int) (dimension.width*0.5);
+        int end_y= (int) (dimension.height*0.2);
+        TouchAction touchAction=new TouchAction<>(Driver.getAppiumDriver());
+        touchAction.press(PointOption.point(start_x,start_y))
+                .waitAction(WaitOptions.waitOptions(Duration.ofSeconds(1)))
+                .moveTo(PointOption.point(end_x,end_y)).perform();
+
+    }
+
+
+
+
+
+
 
 }
   // public static void scrollToElement(String elementText, String direction)  {
