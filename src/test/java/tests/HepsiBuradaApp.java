@@ -6,9 +6,12 @@ import io.appium.java_client.android.AndroidDriver;
 
 import java.net.MalformedURLException;
 
+import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import utilities.ReusableMethods;
+
+import static org.testng.AssertJUnit.assertEquals;
 
 public class HepsiBuradaApp extends HepsiBase {
 
@@ -50,6 +53,9 @@ public class HepsiBuradaApp extends HepsiBase {
         MobileElement basket = driver.findElementById("com.pozitron.hepsiburada:id/cartWebView");
         Assert.assertTrue(basket.isDisplayed());
         ReusableMethods.wait(3);
+
+        String toastMessage = driver.findElement(By.xpath("//android.widget.Toast[1]")).getText();
+        assertEquals(toastMessage, "Expected toast message");
 
         //List<MobileElement> els1 = (MobileElement) driver.findElementsByXPath("//android.widget.Button[@content-desc=\"Sepete Ekle\"]");
         driver.findElementByXPath("//android.widget.Button[@text='Alışverişi tamamla']").click();
