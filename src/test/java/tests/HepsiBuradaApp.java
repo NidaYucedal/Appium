@@ -52,6 +52,7 @@ public class HepsiBuradaApp extends HepsiBase {
         ReusableMethods.wait(3);
 
 
+
         //List<MobileElement> els1 = (MobileElement) driver.findElementsByXPath("//android.widget.Button[@content-desc=\"Sepete Ekle\"]");
         driver.findElementByXPath("//android.widget.Button[@text='Alışverişi tamamla']").click();
         ReusableMethods.wait(5);
@@ -65,12 +66,12 @@ public class HepsiBuradaApp extends HepsiBase {
 
         /*
          // Find the element to delete
-    WebElement element = driver.findElement(By.cssSelector("#element-id"));
+    MobileElement element = driver.findElement(By.xpath("#element-id"));
 
     // Check if the element is displayed
     if (element.isDisplayed()) {
       // If it is, click the delete button
-      driver.findElement(By.cssSelector("#delete-button")).click();
+      driver.findElement(By.xpath("#button")).click();
     }
 
          */
