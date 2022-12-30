@@ -1,15 +1,18 @@
 package utilities;
 
 
+import io.appium.java_client.MobileBy;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.TouchAction;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.touch.offset.PointOption;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Dimension;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
 
+import java.awt.*;
 import java.util.Arrays;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -18,7 +21,7 @@ import java.util.concurrent.TimeUnit;
 public class ReusableMethods {
 
 
-    //HARD WAIT WITH THREAD.SLEEP
+    //hard wait THREAD.SLEEP
     //waitFor(5);  => waits for 5 second
     public static void waitFor(int sec) {
         try {
@@ -182,6 +185,35 @@ public class ReusableMethods {
 
 
 
+    public static void scrollDown() {
+
+        try {
+            String scrollableList="your con-desc of scrollable List";
+            String elementClassName="android.something.something";
+            String anyText="any text";
+
+            Driver.getAppiumDriver().findElement(MobileBy.AndroidUIAutomator(
+                    "new UiScrollable(new UiSelector().description(\"" + scrollableList + "\")).getChildByText("
+                            + "new UiSelector().className(\"" + elementClassName + "\"), \"" + anyText + "\")"));
+        }catch (Exception e){
+            System.out.println("Cannot scroll further");
+        }
+    }
+
+    //You can use the screen dimensions to scroll down:
+    //You can store all the images into a list using its available locator.
+    // Then use driver.scrollToExact(list.get(list.size()).getAttribute("name"));
+    //
+    //Example:
+    //
+    //List<mobileElement> images = driver.findElementsByClass("<locator>");
+    //driver.scrollToExact(images.get(images.size()).getAttribute("name"));
+    //or
+    //
+    //driver.scrollToExact(images.get(images.size()).getText());
+
+
+
     //  @Test
     //  public void testScroll()throws Exception
     //  {
@@ -208,4 +240,21 @@ public class ReusableMethods {
     //      int x=size.width/2;
     //      driver.swipe(x,y_start,x,y_end,4000);
     //  }
+
+
+
+    /*
+# Get the size of the screen
+screenSize = driver.get_window_size()
+
+# Calculate the start and end coordinates for the swipe gesture
+startX = screenSize["width"] * 0.5
+startY = screenSize["height"] * 0.75
+endX = startX
+endY = screenSize["height"] * 0.25
+
+# Perform the swipe gesture
+driver.swipe(startX, startY, endX, endY)
+
+     */
 }
