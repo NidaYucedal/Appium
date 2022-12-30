@@ -14,6 +14,8 @@ import utilities.ReusableMethods;
 
 import java.net.MalformedURLException;
 
+import static org.testng.AssertJUnit.assertEquals;
+
 public class ECommerceNegativeLogin01 extends BaseECommerceApp {
 
     /*
@@ -72,6 +74,11 @@ public class ECommerceNegativeLogin01 extends BaseECommerceApp {
         MobileElement errorPopUpText = driver.findElementByXPath("//android.widget.Toast");
         String errorText = errorPopUpText.getText();
         Assert.assertEquals(errorText, "Please enter your name");
+
+
+        String toastMessage = driver.findElement(By.xpath("//android.widget.Toast[1]")).getText();
+        assertEquals(toastMessage, "Please enter your name");
+
       //  boolean found = false;
       //  for (int i = 0; i < 8; i++) {
       //      if (Driver.getAppiumDriver().getPageSource().contains("class=\"android.widget.Toast\" text=\"" + errorPopUpText + "\"")) {

@@ -54,8 +54,8 @@ public class HepsiBuradaApp extends HepsiBase {
         Assert.assertTrue(basket.isDisplayed());
         ReusableMethods.wait(3);
 
-        String toastMessage = driver.findElement(By.xpath("//android.widget.Toast[1]")).getText();
-        assertEquals(toastMessage, "Expected toast message");
+      //  String toastMessage = driver.findElement(By.xpath("//android.widget.Toast[1]")).getText();
+      //  assertEquals(toastMessage, "Expected toast message");
 
         //List<MobileElement> els1 = (MobileElement) driver.findElementsByXPath("//android.widget.Button[@content-desc=\"Sepete Ekle\"]");
         driver.findElementByXPath("//android.widget.Button[@text='Alışverişi tamamla']").click();

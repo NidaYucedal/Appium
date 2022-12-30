@@ -110,17 +110,22 @@ public class ReusableMethods {
         tapOn(driver.findElementByXPath("//android.widget.TextView[@text='" + elementText + "']"));
     }
 
-    public static void scrollDownToBeVisible(MobileElement element) {
+    /*
+    // Set the implicit wait timeout to 10 seconds
+driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
-    }
+// Wait until the toast message becomes visible
+WebDriverWait wait = new WebDriverWait(driver, 10);
+wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//android.widget.Toast[1]")));
 
-    public static void scrollUpToBeVisible(MobileElement element) {
+// Retrieve the text of the toast message and verify it
+String toastMessage = driver.findElement(By.xpath("//android.widget.Toast[1]")).getText();
+assertEquals(toastMessage, "Expected toast message");
 
-    }
+     */
 
-    public static void swipeFromElementToElement(MobileElement el1, MobileElement el2) {
 
-    }
+
 //attribute check
 
 
