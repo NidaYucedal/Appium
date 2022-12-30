@@ -1,17 +1,15 @@
 package tests;
 
 import io.appium.java_client.MobileElement;
-import io.appium.java_client.TouchAction;
 import io.appium.java_client.android.AndroidDriver;
-
 import java.net.MalformedURLException;
 
-import org.openqa.selenium.By;
+
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import utilities.ReusableMethods;
 
-import static org.testng.AssertJUnit.assertEquals;
+
 
 public class HepsiBuradaApp extends HepsiBase {
 
@@ -25,15 +23,15 @@ public class HepsiBuradaApp extends HepsiBase {
 
 
         //[48,199][592,242]
-        TouchAction t = new TouchAction(driver);
+        //TouchAction t = new TouchAction(driver);
         // WebElement from = driver.findElementByXPath("//android.widget.Button[@bounds='[48,199][592,242]']");
         //WebElement to = driver.findElementByXPath("//android.widget.Button[@bounds='[0,2232][181,2263]']");
         //t.longPress(longPressOptions().withElement(element(from)).withDuration(ofSeconds(2))).release().perform();
 
-        ////android.widget.TextView[@text='nutella']
-        //android.widget.Toast[normalize-space='Please enter your name']
-        //driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.FrameLayout/android.view.ViewGroup/android.widget.LinearLayout/android.widget.LinearLayout[2]/androidx.recyclerview.widget.RecyclerView/android.view.ViewGroup[1]/android.widget.TextView[1]").click();
 
+        //android.widget.TextView[@text='nutella']
+        //driver.findElementByAndroidUIAutomator("UiSelector().className(\"android.widget.TextView\").text(\"nutella\")").click();
+        //driver.findElementByAndroidUIAutomator("UiSelector().resourceId(\"com.pozitron.hepsiburada:id/search_suggestion_title\")").click();
 
         ReusableMethods.wait(3);
         driver.findElementByXPath("//*[@class='suggestion-telPRb5gY5JtrMjuj62z' and text()='nutella']").click();
@@ -54,8 +52,7 @@ public class HepsiBuradaApp extends HepsiBase {
         Assert.assertTrue(basket.isDisplayed());
         ReusableMethods.wait(3);
 
-      //  String toastMessage = driver.findElement(By.xpath("//android.widget.Toast[1]")).getText();
-      //  assertEquals(toastMessage, "Expected toast message");
+
 
         //List<MobileElement> els1 = (MobileElement) driver.findElementsByXPath("//android.widget.Button[@content-desc=\"Sepete Ekle\"]");
         driver.findElementByXPath("//android.widget.Button[@text='Alışverişi tamamla']").click();

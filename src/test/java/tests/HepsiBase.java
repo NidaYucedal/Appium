@@ -35,3 +35,8 @@ public class HepsiBase {
 
     }
 }
+
+
+//  String toastMessage = driver.findElement(By.xpath("//android.widget.Toast[1]")).getText();
+//  assertEquals(toastMessage, "Expected toast message");
+//WebElement element = driver.findElement(By.xpath("//div[@class='my-class']/button[1]"));
