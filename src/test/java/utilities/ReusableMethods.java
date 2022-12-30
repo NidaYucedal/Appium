@@ -2,16 +2,31 @@ package utilities;
 
 
 import io.appium.java_client.MobileElement;
+import io.appium.java_client.TouchAction;
 import io.appium.java_client.android.AndroidDriver;
+import io.appium.java_client.touch.offset.PointOption;
+import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
 
+import java.util.Arrays;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 
 public class ReusableMethods {
 
+
+    //HARD WAIT WITH THREAD.SLEEP
+    //waitFor(5);  => waits for 5 second
+    public static void waitFor(int sec) {
+        try {
+            Thread.sleep(sec * 1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
 
     //elementlerin textlerine gore tiklar
     public static void tapOnElementWithText(String text) {
@@ -110,49 +125,87 @@ public class ReusableMethods {
         tapOn(driver.findElementByXPath("//android.widget.TextView[@text='" + elementText + "']"));
     }
 
-    /*
-    // Set the implicit wait timeout to 10 seconds
-driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
-// Wait until the toast message becomes visible
-WebDriverWait wait = new WebDriverWait(driver, 10);
-wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//android.widget.Toast[1]")));
+    public static void setNumber(String no) {
+        TouchAction touchAction = new TouchAction<>(Driver.getAppiumDriver());
+        String[] sayi = no.split("");
+        System.out.println(Arrays.toString(sayi));
+        for (int i = 0; i < sayi.length; i++) {
+            ReusableMethods.waitFor(2);
+            switch (sayi[i]) {
+                case "0":
+                    touchAction.tap(PointOption.point(414, 2138)).perform();
+                    break;
+                case "1":
+                    touchAction.tap(PointOption.point(133, 1797)).perform();
+                    break;
+                case "2":
+                    touchAction.tap(PointOption.point(402, 1797)).perform();
+                    break;
+                case "3":
+                    touchAction.tap(PointOption.point(680, 1797)).perform();
+                    break;
+                case "4":
+                    touchAction.tap(PointOption.point(133, 1916)).perform();
+                    break;
+                case "5":
+                    touchAction.tap(PointOption.point(402, 1916)).perform();
+                    break;
+                case "6":
+                    touchAction.tap(PointOption.point(680, 1916)).perform();
+                    break;
+                case "7":
+                    touchAction.tap(PointOption.point(133, 2064)).perform();
+                    break;
+                case "8":
+                    touchAction.tap(PointOption.point(402, 2064)).perform();
+                    break;
+                case "9":
+                    touchAction.tap(PointOption.point(680, 2064)).perform();
+                    break;
 
-// Retrieve the text of the toast message and verify it
-String toastMessage = driver.findElement(By.xpath("//android.widget.Toast[1]")).getText();
-assertEquals(toastMessage, "Expected toast message");
+            }
 
-     */
+        }
+    }
+
+    public static void waitToast(MobileElement element, int timeout) {
+        // Set the implicit wait timeout to 10 seconds
+        WebDriverWait wait = new WebDriverWait(Driver.getAppiumDriver(), timeout);
+        wait.until(ExpectedConditions.visibilityOf(element));
+
+        // Wait until the toast message becomes visible
+        Driver.getAppiumDriver().manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//android.widget.Toast[1]")));
+        String toastMessage = Driver.getAppiumDriver().findElement(By.xpath("//android.widget.Toast[1]")).getText();
+    }
 
 
 
-//attribute check
-
-
-  //  @Test
-  //  public void testScroll()throws Exception
-  //  {
-  //      for(int i=0;i<4;i++)
-  //      {
-  //          Thread.sleep(2000);
-  //          if (driver.findElement(By.name("end_item")).isDisplayed())
-  //          {
-  //              driver.findElement(By.name("end_item")).click();
-  //              break;
-  //          }
-  //          else
-  //          {
-  //              horizontalScroll();
-  //          }
+    //  @Test
+    //  public void testScroll()throws Exception
+    //  {
+    //      for(int i=0;i<4;i++)
+    //      {
+    //          Thread.sleep(2000);
+    //          if (driver.findElement(By.name("end_item")).isDisplayed())
+    //          {
+    //              driver.findElement(By.name("end_item")).click();
+    //              break;
+    //          }
+    //          else
+    //          {
+    //              horizontalScroll();
+    //          }
 //
-  //      }
-  //  }
-  //  public void verticalScroll()
-  //  {
-  //      size=driver.manage().window().getSize();
-  //      int y_start=(int)(size.height*0.60);
-  //      int y_end=(int)(size.height*0.30);
-  //      int x=size.width/2;
-  //      driver.swipe(x,y_start,x,y_end,4000);
-  //  }
+    //      }
+    //  }
+    //  public void verticalScroll()
+    //  {
+    //      size=driver.manage().window().getSize();
+    //      int y_start=(int)(size.height*0.60);
+    //      int y_end=(int)(size.height*0.30);
+    //      int x=size.width/2;
+    //      driver.swipe(x,y_start,x,y_end,4000);
+    //  }
 }
