@@ -66,6 +66,19 @@
 
 
     </dependencies>
+    <!-- ignore this files -->
+    <build>
+        <resources>
+            <resource>
+                <directory>src/main/java</directory>
+                <excludes>
+                    <exclude>**/.idea/**</exclude>
+                    <exclude>**/.target/**</exclude>
+                </excludes>
+            </resource>
+        </resources>
+    </build>
+
 
     <profiles>
         <profile>
@@ -107,6 +120,7 @@
                     </plugin>
                 </plugins>
             </build>
+
         </profile>
     </profiles>
 
