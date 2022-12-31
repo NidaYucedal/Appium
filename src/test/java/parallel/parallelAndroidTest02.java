@@ -42,6 +42,5 @@ public class parallelAndroidTest02 extends parallelAndroidTest {
 
 
 
-
     }
 }
