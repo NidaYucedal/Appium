@@ -40,5 +40,9 @@ public class parallelAndroidTest02 extends parallelAndroidTest {
         Thread.sleep(3000);
         driver.quit();
 
+
+
+
+
     }
 }
