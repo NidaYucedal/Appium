@@ -35,7 +35,6 @@ public class ReusableMethods {
 
 
 
-
     //elementlerin textlerine gore tiklar
     public static void tapOnElementWithText(String text) {
         List<MobileElement> mobileElementList = getAppiumDriver().findElementsByClassName("android.widget.TextView");
