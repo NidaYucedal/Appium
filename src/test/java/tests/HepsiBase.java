@@ -29,7 +29,6 @@ public class HepsiBase {
         capabilities.setCapability(MobileCapabilityType.NEW_COMMAND_TIMEOUT,"60000");
 
 
-
         AndroidDriver<MobileElement> driver = new AndroidDriver<MobileElement>(new URL("http://127.0.0.1:4723/wd/hub"), capabilities);
 
         return driver;
