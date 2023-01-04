@@ -37,7 +37,6 @@ public class HepsiBuradaApp extends HepsiBase {
 
 
 
-
         ReusableMethods.wait(3);
         driver.findElementByXPath("//*[@class='suggestion-telPRb5gY5JtrMjuj62z' and text()='nutella']").click();
 
