@@ -33,7 +33,6 @@ public class HepsiBuradaApp extends HepsiBase {
         //driver.findElementByAndroidUIAutomator("UiSelector().className(\"android.widget.TextView\").text(\"nutella\")").click();
         //driver.findElementByAndroidUIAutomator("UiSelector().resourceId(\"com.pozitron.hepsiburada:id/search_suggestion_title\")").click();
 
-
         ReusableMethods.wait(3);
         driver.findElementByXPath("//*[@class='suggestion-telPRb5gY5JtrMjuj62z' and text()='nutella']").click();
 
