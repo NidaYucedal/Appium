@@ -56,7 +56,6 @@ public class HepsiBuradaApp extends HepsiBase {
 
 
 
-
         //List<MobileElement> els1 = (MobileElement) driver.findElementsByXPath("//android.widget.Button[@content-desc=\"Sepete Ekle\"]");
         driver.findElementByXPath("//android.widget.Button[@text='Alışverişi tamamla']").click();
         ReusableMethods.wait(5);
