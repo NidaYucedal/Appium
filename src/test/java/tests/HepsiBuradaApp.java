@@ -66,7 +66,6 @@ public class HepsiBuradaApp extends HepsiBase {
 
 
 
-
         /*
          // Find the element to delete
     MobileElement element = driver.findElement(By.xpath("#element-id"));
