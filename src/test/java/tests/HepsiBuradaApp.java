@@ -55,6 +55,33 @@ public class HepsiBuradaApp extends HepsiBase {
         driver.findElementByXPath("//android.widget.Button[@text='Alışverişi tamamla']").click();
         ReusableMethods.wait(5);
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         MobileElement login = driver.findElementByXPath("//btnLogin[@text='Giriş yap']");
         Assert.assertTrue(login.isDisplayed());
 
