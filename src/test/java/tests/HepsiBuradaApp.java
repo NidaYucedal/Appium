@@ -56,7 +56,6 @@ public class HepsiBuradaApp extends HepsiBase {
         ReusableMethods.wait(5);
 
 
-
         MobileElement login = driver.findElementByXPath("//btnLogin[@text='Giriş yap']");
         Assert.assertTrue(login.isDisplayed());
 
