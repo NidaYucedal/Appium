@@ -200,12 +200,6 @@ public class ReusableMethods {
 
     }
 
-
-
-
-
-
-
 }
   // public static void scrollToElement(String elementText, String direction)  {
   //     AndroidDriver  driver = (AndroidDriver) getAppiumDriver();

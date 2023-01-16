@@ -42,10 +42,14 @@ public class Appium07NativeChrome {
         Set<String> butunTurler = driver.getContextHandles();
         for (String tur : butunTurler) {
             System.out.println(tur);
-            if (tur.contains("WEBVIEW_chrome")) {
+            if (tur.contains("WEBVIEW_chrome")) {  //eğer web varsa seç ve set et
                 driver.context(tur);
             }
 
+            //app native olarak devam ettiği için web app e geçemedik
+            //swtich işlemi yapamadık
+            //Set<String> contextNames = driver.getContextHandles();
+            //driver.context(contextNames.toArray()[1]);
         }
 
         System.out.println(driver.getContext() + "<===app degistiginde");

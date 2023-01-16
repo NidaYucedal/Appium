@@ -57,17 +57,17 @@ public class Appium06Amazon {
         }
 
         System.out.println(driver.getContext() + "<===app degistiginde");
-        Thread.sleep(5000);
+        Thread.sleep(7000);
         MobileElement homeScreenLogo=driver.findElementByAccessibilityId("Amazon");
         Assert.assertTrue(homeScreenLogo.isDisplayed());
 
-        //System.out.println(driver.getCurrentUrl());
+        System.out.println(driver.getCurrentUrl());
         Thread.sleep(3000);
         MobileElement signInButton=driver.findElementByAccessibilityId("Sign in ›");
         signInButton.click();
 
-       //  MobileElement welcomeText=driver.findElementByXPath("//android.widget.TextView[@text='Welcome']");
-       //  Assert.assertEquals(welcomeText.getText(),"Welcome");
+        MobileElement welcomeText=driver.findElementByXPath("//android.widget.TextView[@text='Welcome']");
+        Assert.assertEquals(welcomeText.getText(),"Welcome");
 
         Thread.sleep(3);
         //close session

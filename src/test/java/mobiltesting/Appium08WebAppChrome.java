@@ -22,20 +22,27 @@ public class Appium08WebAppChrome {
         capabilities.setCapability(MobileCapabilityType.PLATFORM_VERSION, "10");
         capabilities.setCapability(MobileCapabilityType.DEVICE_NAME, "626c3e64");
         capabilities.setCapability(MobileCapabilityType.AUTOMATION_NAME, "UiAutomator2");
-        capabilities.setCapability(MobileCapabilityType.NEW_COMMAND_TIMEOUT,"6000");
+        capabilities.setCapability(MobileCapabilityType.NEW_COMMAND_TIMEOUT, "6000");
 
+
+        //web app de artik browser ile calısıyoruz
         //chrome driver versionu buradan indirebilirsiniz
         //https://chromedriver.storage.googleapis.com/index.html
         //sonrasında driver in absolute path bir alt satirda tanimliyoruz
         // capabilities.setCapability("chromeDriverExecutable","path");
+        //chrome://inspect/#devices -> devtools acar
+        //web sitesindeki gibi locate alabiliriz
 
         capabilities.setCapability(MobileCapabilityType.BROWSER_NAME, "chrome");
-        capabilities.setCapability("chromeDriverExecutable","C:\\Users\\Administrator\\IdeaProjects\\AppiumPractise\\src\\driver\\chromedriver.exe");
+        //chrome driver eski ise bunu yazcaksınız
+        capabilities.setCapability("chromeDriverExecutable", "C:\\Users\\Administrator\\IdeaProjects\\AppiumPractise\\src\\driver\\chromedriver.exe");
 
 
         AndroidDriver<MobileElement> driver = new AndroidDriver<MobileElement>(new URL("http://127.0.0.1:4723/wd/hub"), capabilities);
 
         driver.get("https://www.amazon.com");
+
+
         //asagidaki kod tel kilitli ise acmamizi sagliyor
         if (driver.isDeviceLocked()) {
             driver.unlockDevice();
@@ -53,8 +60,17 @@ public class Appium08WebAppChrome {
 
         }
 
-        MobileElement logo=driver.findElementByXPath("//span[@id='logo-ext']");
+        MobileElement logo = driver.findElementByXPath("//span[@class='nav-sprite nav-logo-base']");
         Assert.assertTrue(logo.isDisplayed());
+
+        MobileElement signIn = driver.findElementByXPath("//*[@class='nav-a nav-show-sign-in']");
+        signIn.click();
+
+
+        MobileElement welcome = driver.findElementByXPath("//*[@id='outer-accordion-signin-signup-page']");
+        ////h2[normalize-space()='Welcome']
+        Assert.assertTrue(welcome.isDisplayed());
+
 
         System.out.println(driver.getContext() + "<===app degistiginde");
         Thread.sleep(5000);
