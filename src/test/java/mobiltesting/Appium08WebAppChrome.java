@@ -85,7 +85,7 @@ public class Appium08WebAppChrome {
         Assert.assertTrue(welcome.isDisplayed());
 
 
-        System.out.println(driver.getContext() + "<===app degistiginde");
+        System.out.println(driver.getContext() + "<=== app degistiginde");
         Thread.sleep(5000);
 
         //close session
