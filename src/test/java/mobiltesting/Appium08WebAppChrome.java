@@ -29,7 +29,7 @@ public class Appium08WebAppChrome {
         //chrome driver versiyonu buradan indirebilirsiniz
         //https://chromedriver.storage.googleapis.com/index.html
         //sonrasında driver in absolute path bir alt satirda tanimliyoruz
-        // capabilities.setCapability("chromeDriverExecutable","path");
+        //capabilities.setCapability("chromeDriverExecutable","path");
         //chrome://inspect/#devices -> devtools acar
         //web sitesindeki gibi locate alabiliriz
 
