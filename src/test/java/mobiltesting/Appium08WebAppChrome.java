@@ -26,7 +26,7 @@ public class Appium08WebAppChrome {
 
 
         //web app de artik browser ile calısıyoruz
-        //chrome driver versionu buradan indirebilirsiniz
+        //chrome driver versiyonu buradan indirebilirsiniz
         //https://chromedriver.storage.googleapis.com/index.html
         //sonrasında driver in absolute path bir alt satirda tanimliyoruz
         // capabilities.setCapability("chromeDriverExecutable","path");
