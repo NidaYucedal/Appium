@@ -53,7 +53,7 @@ public class Appium08WebAppChrome {
         for (String tur : butunTurler) {
             System.out.println(tur);
             if (tur.contains("WEBVIEW_chrome")) {
-                driver.context(tur);
+                driver.context(tur);  //o turu set et ve ondan devam et
             }
 
         }
