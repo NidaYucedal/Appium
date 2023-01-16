@@ -52,19 +52,24 @@ public class Appium07NativeChrome {
             //driver.context(contextNames.toArray()[1]);
         }
 
-        System.out.println(driver.getContext() + "<===app degistiginde");
+        System.out.println(driver.getContext() + "<=== app degistiginde");
         Thread.sleep(5000);
-        MobileElement homeScreenLogo = driver.findElementByAccessibilityId("Amazon");
+        MobileElement homeScreenLogo = driver.findElementByXPath("//android.view.View[@content-desc=\"Amazon\"]");
         Assert.assertTrue(homeScreenLogo.isDisplayed());
-
-        //System.out.println(driver.getCurrentUrl());
+        System.out.println("Ana sayfadayiz");
         Thread.sleep(3000);
-        MobileElement signInButton = driver.findElementByAccessibilityId("Sign in ›");
+
+        ////android.widget.TextView[@text='Sign in ›']
+        MobileElement signInButton = driver.findElementByXPath("//android.view.View[@content-desc=\"Sign in ›\"]/android.widget.TextView");
         signInButton.click();
 
+
+        Thread.sleep(5000);
         MobileElement welcomeText = driver.findElementByXPath("//android.widget.TextView[@text='Welcome']");
         Assert.assertEquals(welcomeText.getText(), "Welcome");
 
+
+        System.out.println("Test bitti");
         Thread.sleep(3);
         //close session
         driver.closeApp();
@@ -72,3 +77,6 @@ public class Appium07NativeChrome {
 
     }
 }
+
+
+
