@@ -41,7 +41,6 @@ public class Appium08WebAppChrome {
         driver.get("https://www.amazon.com");
 
 
-
         //asagidaki kod tel kilitli ise acmamizi sagliyor
         if (driver.isDeviceLocked()) {
             driver.unlockDevice();
