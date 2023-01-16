@@ -46,6 +46,13 @@ public class Appium08WebAppChrome {
             driver.unlockDevice();
         }
 
+        //burda aplikasyonu hangi turleri oldugunu gormek icin getContextHandles() kullaniyoruz
+        //web ve native turlerini içerebilir bu durumda hybrid app olur.
+        //Bu kontrol etmek için inspectorden
+        //actions->context->context->get context hangi tur oldugunu gosterir
+        //
+        //amazon app açılırken native olarak açılıyor fakat içerisine webview app koymuşlar
+        //bu yuzden hybrid app olur.
 
         System.out.println(driver.getContext() + "<===app acildiginda");
         //burda aplikasyonu hangi turleri oldugunu gormek icin getContextHandles() kullaniyoruz
@@ -56,6 +63,14 @@ public class Appium08WebAppChrome {
                 driver.context(tur);  //o turu set et ve ondan devam et
             }
 
+            //mevcut olan tum turleri set içine koyup bir appin contextlerini verir.
+            //app açıldığında neredeyiz web mi native mi
+            //web app e geçtiğimizde selenium devreye giriyor
+            //switch yapmak lazım web app de çalışlırken selenium ile çalışıyoruz çünkü
+            //
+            //google->inspect->dev tools da üç nokta->more tools->remote device
+            //eğer yoksa aşağıdaki link e git tel de google sayfasının açık olması lazım
+            //chrome://inspect/#devices
         }
 
         MobileElement logo = driver.findElementByXPath("//span[@class='nav-sprite nav-logo-base']");
