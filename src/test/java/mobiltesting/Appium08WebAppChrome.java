@@ -24,6 +24,9 @@ public class Appium08WebAppChrome {
         capabilities.setCapability(MobileCapabilityType.AUTOMATION_NAME, "UiAutomator2");
         capabilities.setCapability(MobileCapabilityType.NEW_COMMAND_TIMEOUT, "6000");
 
+        capabilities.setCapability(MobileCapabilityType.BROWSER_NAME, "chrome");
+        //chrome driver eski ise bunu yazcaksınız
+        capabilities.setCapability("chromeDriverExecutable", "C:\\Users\\Administrator\\IdeaProjects\\AppiumPractise\\src\\driver\\chromedriver.exe");
 
         //web app de artik browser ile calısıyoruz
         //chrome driver versiyonu buradan indirebilirsiniz
@@ -32,11 +35,6 @@ public class Appium08WebAppChrome {
         //capabilities.setCapability("chromeDriverExecutable","path");
         //chrome://inspect/#devices -> devtools acar
         //web sitesindeki gibi locate alabiliriz
-
-        capabilities.setCapability(MobileCapabilityType.BROWSER_NAME, "chrome");
-        //chrome driver eski ise bunu yazcaksınız
-        capabilities.setCapability("chromeDriverExecutable", "C:\\Users\\Administrator\\IdeaProjects\\AppiumPractise\\src\\driver\\chromedriver.exe");
-
 
         AndroidDriver<MobileElement> driver = new AndroidDriver<MobileElement>(new URL("http://127.0.0.1:4723/wd/hub"), capabilities);
 
