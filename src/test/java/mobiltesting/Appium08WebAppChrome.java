@@ -87,7 +87,7 @@ public class Appium08WebAppChrome {
         //MobileElement welcome = driver.findElementByXPath("//*[@id='outer-accordion-signin-signup-page']");
         ////h2[normalize-space()='Welcome']
 
-        MobileElement welcome = driver.findElementByTagName("//h2");
+        MobileElement welcome = driver.findElementByTagName("h2");
         Assert.assertTrue(welcome.isDisplayed());
 
 
