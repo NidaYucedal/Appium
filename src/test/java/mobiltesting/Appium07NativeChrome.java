@@ -3,6 +3,7 @@ package mobiltesting;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.remote.MobileCapabilityType;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -54,7 +55,7 @@ public class Appium07NativeChrome {
 
         System.out.println(driver.getContext() + "<=== app degistiginde");
         Thread.sleep(5000);
-        MobileElement homeScreenLogo = driver.findElementByXPath("//android.view.View[@content-desc=\"Amazon\"]");
+        MobileElement homeScreenLogo = driver.findElementByAccessibilityId("Amazon");
         Assert.assertTrue(homeScreenLogo.isDisplayed());
         System.out.println("Ana sayfadayiz");
         Thread.sleep(3000);

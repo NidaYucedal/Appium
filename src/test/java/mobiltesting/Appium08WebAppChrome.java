@@ -73,15 +73,21 @@ public class Appium08WebAppChrome {
             //chrome://inspect/#devices
         }
 
-        MobileElement logo = driver.findElementByXPath("//span[@class='nav-sprite nav-logo-base']");
-        Assert.assertTrue(logo.isDisplayed());
+        //MobileElement logo = driver.findElementByXPath("//span[@class='nav-sprite nav-logo-base']");
+        MobileElement amazon = driver.findElementByCssSelector(".nav-left");
+        Assert.assertTrue(amazon.isDisplayed());
+        //Assert.assertTrue(logo.isDisplayed());
 
-        MobileElement signIn = driver.findElementByXPath("//*[@class='nav-a nav-show-sign-in']");
+        //MobileElement signIn = driver.findElementByXPath("//*[@class='nav-a nav-show-sign-in']");
+        //signIn.click();
+        MobileElement signIn = driver.findElementByCssSelector("#nav-logobar-greeting");
         signIn.click();
 
 
-        MobileElement welcome = driver.findElementByXPath("//*[@id='outer-accordion-signin-signup-page']");
+        //MobileElement welcome = driver.findElementByXPath("//*[@id='outer-accordion-signin-signup-page']");
         ////h2[normalize-space()='Welcome']
+
+        MobileElement welcome = driver.findElementByTagName("//h2");
         Assert.assertTrue(welcome.isDisplayed());
 
 
