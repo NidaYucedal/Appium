@@ -15,6 +15,17 @@ import java.net.URL;
 
 public class Appium10ApiDemos  {
 
+    //apidemos app ini intellije tanımla
+    //api demos butonuna tikla
+    //preference butonuna tikla
+    //preference dependencies butonuna tikla
+    //click to check box
+    //WiFi settings click
+    //Wifi settings yazisinin gorunurlugunu dogrula
+    //Wifi settings text box a metin gonder
+    //ok butonuna bas
+    //close the session
+
 
     @Test
     public void test() throws MalformedURLException, InterruptedException {
@@ -24,7 +35,9 @@ public class Appium10ApiDemos  {
         capabilities.setCapability(MobileCapabilityType.PLATFORM_VERSION, "12");
         capabilities.setCapability(MobileCapabilityType.DEVICE_NAME, "1312d4f50606");
         capabilities.setCapability(MobileCapabilityType.AUTOMATION_NAME, "UiAutomator2");
-        capabilities.setCapability(MobileCapabilityType.APP, "C:\\Users\\Administrator\\IdeaProjects\\AppiumPractise\\src\\apps\\apiDemos.apk");
+        //capabilities.setCapability(MobileCapabilityType.APP, "C:\\Users\\Administrator\\IdeaProjects\\AppiumPractise\\src\\apps\\apiDemos.apk");
+        capabilities.setCapability("appPackage", "com.touchboarder.android.api.demos");
+        capabilities.setCapability("appActivity", "com.touchboarder.androidapidemos.MainActivity");
         capabilities.setCapability("noReset", "true");
 
 
