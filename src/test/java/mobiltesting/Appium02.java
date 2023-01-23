@@ -18,27 +18,25 @@ public class Appium02 {
         DesiredCapabilities capabilities = new DesiredCapabilities();
 
         capabilities.setCapability(MobileCapabilityType.PLATFORM_NAME, "Android");
-        capabilities.setCapability(MobileCapabilityType.PLATFORM_VERSION, "10.0");
+        capabilities.setCapability(MobileCapabilityType.PLATFORM_VERSION, "12");
         capabilities.setCapability(MobileCapabilityType.DEVICE_NAME, "emulator-5554");
         capabilities.setCapability(MobileCapabilityType.AUTOMATION_NAME, "UiAutomator2");
-        capabilities.setCapability(MobileCapabilityType.APP, "C:\\Users\\Administrator\\Desktop\\Appium\\Gesture Tool_1.3_Apkpure.apk");
-        capabilities.setCapability("appPackage", "com.google.android.apps.nexuslauncher");
-        capabilities.setCapability("appActivity", "com.google.android.apps.nexuslauncher.NexusLauncherActivity");
-        capabilities.setCapability(MobileCapabilityType.NO_RESET, "true");
+        //capabilities.setCapability(MobileCapabilityType.APP, "C:\\Users\\Administrator\\Desktop\\Appium\\Gesture Tool_1.3_Apkpure.apk");
+       capabilities.setCapability("appPackage", "com.amazon.mShop.android.shopping");
+       capabilities.setCapability("appActivity", "com.amazon.mShop.navigation.MainActivity");
+       // capabilities.setCapability(MobileCapabilityType.NO_RESET, "true");
+       capabilities.setCapability("disableAndroidWatchers", true);
 
         AndroidDriver<MobileElement> driver = new AndroidDriver<MobileElement>(new URL("http://127.0.0.1:4723/wd/hub"), capabilities);
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        //driver.findElementByXPath("//android.widget.TextView[@content-desc=\"Gesture Tool\"]").click();
+        //driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 
-        driver.findElementByXPath("//android.widget.TextView[@content-desc=\"Gesture Tool\"]").click();
-        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
-
-        MobileElement title=driver.findElementById("android:id/title");
-        Assert.assertTrue(title.isDisplayed());
-        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
-        MobileElement test=driver.findElementById("com.davemac327.gesture.tool:id/testButton");
-        Assert.assertTrue(test.isEnabled());
+       // MobileElement title=driver.findElementById("android:id/title");
+       // Assert.assertTrue(title.isDisplayed());
+       // driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+       // MobileElement test=driver.findElementById("com.davemac327.gesture.tool:id/testButton");
+       // Assert.assertTrue(test.isEnabled());
 
 
 

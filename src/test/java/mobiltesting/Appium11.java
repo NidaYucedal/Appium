@@ -17,10 +17,11 @@ public class Appium11 {
 
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability(MobileCapabilityType.PLATFORM_NAME, "Android");
-        capabilities.setCapability(MobileCapabilityType.PLATFORM_VERSION, "10");
+        capabilities.setCapability(MobileCapabilityType.PLATFORM_VERSION, "12");
         capabilities.setCapability(MobileCapabilityType.DEVICE_NAME, "626c3e64");
         capabilities.setCapability(MobileCapabilityType.AUTOMATION_NAME, "UiAutomator2");
-        capabilities.setCapability(MobileCapabilityType.APP, "C:\\Users\\Administrator\\IdeaProjects\\AppiumPractise\\src\\apps\\apiDemos.apk");
+        capabilities.setCapability("appPackage", "com.touchboarder.android.api.demos");
+        capabilities.setCapability("appActivity", "com.touchboarder.androidapidemos.MainActivity");
         capabilities.setCapability("noReset", "true");
 
 
@@ -45,6 +46,15 @@ public class Appium11 {
         System.out.println(isChecked + "---->");
         if (isChecked.equals("false")) {
             driver.findElementById("android:id/checkbox").click();
+
+            /*
+            MobileElement wiFiSetting = driver.findElementByXPath("//android.widget.TextView[@text='WiFi settings']");
+MobileElement wiFiCheckBox = driver.findElementById("android:id/checkbox");
+
+if(!wiFiSetting.isEnabled()) {
+    wiFiCheckBox.click();
+}
+             */
         }
 
         //click to check box
