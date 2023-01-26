@@ -79,5 +79,14 @@ if(!wiFiSetting.isEnabled()) {
         driver.closeApp();
 
 
+        //API Demos" butununa tikla
+        //Views" butununa tikladi
+        //Expandable Lists" butununa tikla
+        //"Views/Expandable Lists" ekrani dogrula
+        //1. Custom Adapter" butununa tikla
+        //People Names" butununa tikla
+        //Chuck" butununa uzun bas
+        //"Sample menu" ekrani dogrula
+
     }
 }
