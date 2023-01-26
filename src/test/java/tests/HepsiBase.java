@@ -19,14 +19,12 @@ public class HepsiBase {
 
         capabilities.setCapability("platformName", "Android");
         capabilities.setCapability("deviceName", "emulator-5554");
-        capabilities.setCapability("platformVersion", "10.0");
+        capabilities.setCapability("platformVersion", "12");
         capabilities.setCapability("automationName", "UiAutomator2");
-        //capabilities.setCapability(MobileCapabilityType.APP, "C:\\Users\\Administrator\\IdeaProjects\\AppiumPractise\\src\\apps\\Calculator_8.3 (477856174)_Apkpure.apk");
-        capabilities.setCapability("appPackage", "com.google.android.calculator");
-        capabilities.setCapability("appActivity", "com.android.calculator2.Calculator");
+        capabilities.setCapability("appPackage", "com.pozitron.hepsiburada");
+        capabilities.setCapability("appActivity", "com.hepsiburada.ui.startup.SplashActivity");
         capabilities.setCapability(MobileCapabilityType.NO_RESET, true);
         capabilities.setCapability("autoAcceptAlert",true);
-        capabilities.setCapability(MobileCapabilityType.NEW_COMMAND_TIMEOUT,"60000");
 
 
         AndroidDriver<MobileElement> driver = new AndroidDriver<MobileElement>(new URL("http://127.0.0.1:4723/wd/hub"), capabilities);
