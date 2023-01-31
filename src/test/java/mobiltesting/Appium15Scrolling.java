@@ -61,5 +61,8 @@ public class Appium15Scrolling extends BaseClass {
         //Bu durumda dokunma eylemi, noktada (start_x, start_y)
         // bir basma hareketi ve hareketi noktaya (end_x, end_y)
         // taşıma ve ardından bırakmadır.
+
+
+
     }
 }

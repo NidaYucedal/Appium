@@ -1,6 +1,7 @@
 package utilities;
 
 
+import io.appium.java_client.MobileBy;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.TouchAction;
 import io.appium.java_client.android.AndroidDriver;
@@ -198,6 +199,10 @@ public class ReusableMethods {
                 .waitAction(WaitOptions.waitOptions(Duration.ofSeconds(1)))
                 .moveTo(PointOption.point(end_x,end_y)).perform();
 
+    }
+
+    public static void scrollToFirstHorizontalScrollableElement(String textToSearch) {
+        Driver.getAppiumDriver().findElement(MobileBy.AndroidUIAutomator("new UiScrollable(new UiSelector().scrollable(true)).setAsHorizontalList().scrollIntoView(new UiSelector().text(\""+textToSearch+"\"))")).click();
     }
 
 }
