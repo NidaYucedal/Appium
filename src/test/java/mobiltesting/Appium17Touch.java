@@ -65,6 +65,15 @@ public class Appium17Touch {
         Assert.assertTrue(hiddenDot.isDisplayed());
 
 
+
+
+
+
+
+
+
+
+
     }
 }
 
