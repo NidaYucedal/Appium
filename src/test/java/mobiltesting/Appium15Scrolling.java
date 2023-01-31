@@ -39,6 +39,7 @@ public class Appium15Scrolling extends BaseClass {
         // int start_y = (int) (dimension.height * 0 //parmagi koydugumuz yer
         // int end_x = (int) (dimension.width * 0.5);
         // int end_y = (int) (dimension.height * 0
+
         // TouchAction touchAction = new TouchAction(driver);
         // for (int i = 0; i < 3; i++) {
         //     Thread.sleep(3000);
@@ -46,7 +47,7 @@ public class Appium15Scrolling extends BaseClass {
         //             .moveTo(PointOption.point(end_x,end_y)).release().perform();
         // }
 
-        //dokunma eylemleri gerçekleştirmek için kullanılır. io.appium.java_clientPaketin bir parçasıdır
+        //dokunma eylemleri gerçekleştirmek için kullanılır. io.appium.java_client Paketin bir parçasıdır
         //Sağladığınız kod, TouchActionsınıfı kullanarak dokunma eylemlerini
         // birbirine zincirliyor ve ardından bunları gerçekleştiriyor.
         // Yöntem press(), ekranda x ve y koordinatlarıyla temsil edilen

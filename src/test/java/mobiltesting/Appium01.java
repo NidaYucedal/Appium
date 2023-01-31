@@ -45,8 +45,6 @@ public class Appium01 {
         capabilities.setCapability("noReset", true);
         capabilities.setCapability("disableAndroidWatchers", true);
 
-        logger.info("calismadi");
-
         AndroidDriver<MobileElement> driver = new AndroidDriver<MobileElement>(new URL("http://127.0.0.1:4723/wd/hub"), capabilities);
 
         touchAction = new TouchAction(driver);
