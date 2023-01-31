@@ -64,6 +64,10 @@ public class Appium17Touch {
         MobileElement hiddenDot = driver.findElementById("com.touchboarder.android.api.demos:id/drag_dot_hidden");
         Assert.assertTrue(hiddenDot.isDisplayed());
 
+
+
+
+
     }
 }
 
