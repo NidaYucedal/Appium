@@ -87,7 +87,6 @@ public class Appium17Touch {
 
 
 
-
     }
 }
 
