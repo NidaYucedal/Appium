@@ -37,19 +37,24 @@ public class Appium17Touch {
         Thread.sleep(1000);
         MobileElement apiDemosButton = driver.findElementByAndroidUIAutomator("UiSelector().text(\"API Demos\")");
         apiDemosButton.click();
+
         //"API Demos" sayfasinda olundugunu dogrula
         MobileElement apiDemosTitle = driver.findElementByAndroidUIAutomator("UiSelector().text(\"API Demos\")");
         Assert.assertEquals(apiDemosTitle.getText(), "API Demos");
+
         //"Views" butununa tikla
-        driver.findElementByAndroidUIAutomator("new UiScrollable(new UiSelector().scrollable(true).instance(0)).scrollIntoView(new UiSelector().text(\"Views\"))").click(); //scroll down to the element and click
+        driver.findElementByAndroidUIAutomator("new UiScrollable(new UiSelector().scrollable(true).instance(0)).scrollIntoView(new UiSelector().text(\"Views\"))").click();
+
         //"Views" sayfasinda olundugunu dogrula
         MobileElement viewsTitle = driver.findElementByAndroidUIAutomator("UiSelector().text(\"Views\")");
         Assert.assertEquals(viewsTitle.getText(), "Views");
         Thread.sleep(3000);
+
         //kullanici Drag and Drop butonuna tikladi
         MobileElement drag = driver.findElementByXPath("//android.widget.TextView[@text='Drag and Drop']");
         drag.click();
         Thread.sleep(3000);
+
         //kullanici birinci topu ikici topun ustune brakti
         MobileElement firstDot = driver.findElementById("com.touchboarder.android.api.demos:id/drag_dot_1");
         MobileElement secondDot = driver.findElementById("com.touchboarder.android.api.demos:id/drag_dot_2");
@@ -63,6 +68,30 @@ public class Appium17Touch {
         //kullanici dorduncu topun gorunurlugunu dogrula
         MobileElement hiddenDot = driver.findElementById("com.touchboarder.android.api.demos:id/drag_dot_hidden");
         Assert.assertTrue(hiddenDot.isDisplayed());
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     }
 }
