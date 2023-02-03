@@ -68,7 +68,6 @@ public class Appium17Touch {
         //kullanici dorduncu topun gorunurlugunu dogrula
         MobileElement hiddenDot = driver.findElementById("com.touchboarder.android.api.demos:id/drag_dot_hidden");
         Assert.assertTrue(hiddenDot.isDisplayed());
-
     }
 }
 
